@@ -1,7 +1,5 @@
 import { t } from "@rbxts/t";
 
-import { Medal, medalTypeGuard } from "./Medal";
-
 export type User = {
 	_id: string;
 	userid: number;
@@ -14,7 +12,7 @@ export type User = {
 	nextRankName: string;
 	currentRankExperience: number;
 	staticRank: boolean;
-	medals: Medal[];
+	medals: number[];
 	boosting: boolean;
 	primary: boolean;
 	nextRankLocked: boolean;
@@ -29,10 +27,13 @@ const userTypeGuard = t.strictInterface({
 	rank: t.number,
 	rankName: t.string,
 	nextRankExperience: t.number,
-	nextRankName: t.number,
+	nextRankName: t.string,
 	currentRankExperience: t.number,
 	staticRank: t.boolean,
-	medals: t.array(medalTypeGuard),
+	medals: t.array(t.number),
+	boosting: t.boolean,
+	primary: t.boolean,
+	nextRankLocked: t.boolean,
 });
 
 export const isUser = (value: unknown): value is User => userTypeGuard(value);
