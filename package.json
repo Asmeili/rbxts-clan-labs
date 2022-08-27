@@ -1,6 +1,6 @@
 {
 	"name": "@rbxts/clan-labs",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "An object-orientated TypeScript implementation of all public known ClanLabs apis.",
 	"main": "out/init.lua",
 	"scripts": {
