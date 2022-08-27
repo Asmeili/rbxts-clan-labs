@@ -39,4 +39,13 @@ export class User {
 			.awardMedal(this.data.userid, medalId)
 			.tap((newUser) => (this.data = newUser));
 	}
+
+	async getMedals() {
+		const medals = await this.client.apis.medalApi.getMedals();
+		return this.data.medals.map((medal) => {
+			const existingMedal = medals.find((existingMedal) => existingMedal.Id === medal);
+			assert(existingMedal);
+			return existingMedal;
+		});
+	}
 }
