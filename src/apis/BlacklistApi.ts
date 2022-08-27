@@ -30,7 +30,7 @@ export class BlacklistApi extends BaseApi {
 
 	/**
 	 * @param {string} blacklistId The id of the blacklist whose data is being fetched.
-	 * @returns {Promise<Blacklist>} Te pure blacklist data.
+	 * @returns {Promise<Blacklist>} The pure blacklist data.
 	 */
 	async getBlacklist(blacklistId: string) {
 		const data = await this.request({
@@ -65,6 +65,11 @@ export class BlacklistApi extends BaseApi {
 	 * @param {string} blacklistDescription The new description to update to.
 	 */
 	async updateBlacklistDescription(blacklistId: string, blacklistDescription: string) {
-		throw "Endpoint not implemented.";
+		await this.request({
+			path: `${blacklistId}/description/${blacklistDescription}`,
+			method: "POST",
+			needsAuth: true,
+			expectedCode: 200,
+		});
 	}
 }

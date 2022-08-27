@@ -1,7 +1,7 @@
 import { BaseApi } from "./BaseApi";
 
-import { Medal, isMedals } from "../types/Medal";
-import { User, isUser } from "../types/User";
+import { isMedals } from "../types/Medal";
+import { isUser } from "../types/User";
 
 /**
  * @description An object responsible for all medal related apis.

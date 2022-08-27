@@ -18,7 +18,6 @@ export class Blacklist {
 	/**
 	 * @description Updates the description the blacklist.
 	 * @param {string} blacklistDescription The new description.
-	 * @returns {Promise<void>}
 	 */
 	async updateDescription(blacklistDescription: string) {
 		return await this.client.apis.blacklistApi
